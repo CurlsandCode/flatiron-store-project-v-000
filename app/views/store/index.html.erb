@@ -2,6 +2,13 @@
   <%= link_to category.title, category_path(category) %>
 <% end %>
 
+
 <% @items.each do |item| %>
-  <p><%= item.title %> | <%= number_to_currency(item.price) %> | <%= button_to 'Add to Cart', line_items_path(item_id: item) %></p>
+  <p><%= item.title %> | $<%= item.price.to_f/100 %> | </p>
+  <% if user_signed_in? %>
+    <%= form_tag line_items_path(item_id: item) do %>
+      <%= hidden_field_tag 'item_id', item.id %>
+      <%= submit_tag "Add to Cart" %>
+    <% end %>
+  <% end %>
 <% end %>

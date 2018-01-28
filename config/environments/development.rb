@@ -32,7 +32,7 @@ Rails.application.configure do
   # Checks for improperly declared sprockets dependencies.
   # Raises helpful error messages.
   config.assets.raise_runtime_errors = true
-
+  config.action_mailer.default_url_options = { host: '165.227.141.103', port: 40154 }
   # Raises error for missing translations
   # config.action_view.raise_on_missing_translations = true
 end
