@@ -5,9 +5,9 @@ class CreateItems < ActiveRecord::Migration
        t.integer :inventory
        t.float :price
        t.integer :category_id
- 
+
        t.timestamps null: false
-      		
+
     end
   end
 end
